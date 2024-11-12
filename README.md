@@ -1,1 +1,2 @@
-# qualifying
+# Supplementary material for my qualifying exam
+
