@@ -1,7 +1,14 @@
 from qiskit.quantum_info import SparsePauliOp
 import numpy as np
-from .bogo import bangle
-from .exact import omegak
+
+def omegak(lam, k, n):
+    return np.sqrt((lam - np.cos(2*np.pi*k/n))**2 + np.sin(2*np.pi*k/n)**2)
+
+
+def bangle(lam, n, k):
+    num = np.sin(2*np.pi*k/n)
+    den = lam - np.cos(2*np.pi*k/n)
+    return np.arctan2(num, den)
 
 def ci_jw(i, n):
     if i == 0:
